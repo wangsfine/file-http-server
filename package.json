@@ -1,0 +1,23 @@
+{
+  "name": "simple-http-server",
+  "version": "1.0.0",
+  "description": "a simple http server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsfine/simple-http-server.git"
+  },
+  "author": "wangsfine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangsfine/simple-http-server/issues"
+  },
+  "homepage": "https://github.com/wangsfine/simple-http-server#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "lodash": "^4.17.20"
+  }
+}
