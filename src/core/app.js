@@ -46,6 +46,9 @@ module.exports = {
     },
 
     middleware(middleware) {
+        if (!middleware) {
+            return console.warn('proxy is empty')
+        }
         if (!isFunction(middleware)) {
             throw new Error('middleware format error, you need a function')
         }

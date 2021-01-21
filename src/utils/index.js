@@ -1,5 +1,5 @@
 module.exports = {
     parseUrl(url) {
-        return url;
+        return decodeURIComponent(url);
     }
 }
