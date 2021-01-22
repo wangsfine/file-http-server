@@ -46,9 +46,6 @@ module.exports = {
     },
 
     middleware(middleware) {
-        if (!middleware) {
-            return console.warn('proxy is empty')
-        }
         if (!isFunction(middleware)) {
             throw new Error('middleware format error, you need a function')
         }
@@ -56,6 +53,11 @@ module.exports = {
             throw new Error('you registed the same middleware');
         }
         configs.middlewares.push(middleware);
+        return this;
+    },
+
+    middlewares(middlewares = []) {
+        configs.middlewares = middlewares;
         return this;
     },
 

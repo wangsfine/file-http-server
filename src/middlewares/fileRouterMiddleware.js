@@ -12,12 +12,10 @@ const renderFile = util.promisify(ejs.renderFile);
 
 async function registRoutes(req, resp) {
     const path = utils.parseUrl(req.url);
-    if (path === '/favicon.ico'){
-        return fs.createReadStream(resolve(__dirname, '../static/favicon.ico')).pipe(resp);
-    }
     try {
         const absolutePath = join(process.cwd(), path);
         const stat = await fsPromise.stat(absolutePath);
+        // dir
         if (stat.isDirectory()) {
             const dirents = [];
             const dirs = await fsPromise.opendir(absolutePath);
@@ -28,11 +26,14 @@ async function registRoutes(req, resp) {
             const templateName = resolve(__dirname, '../template/index.ejs');
             const html = await renderFile(templateName, { dirents }, { cache: true, filename: templateName});
             return resp.end(html);
-        } else if (stat.isFile()){
+        }
+        // file
+        if (stat.isFile()){
             fs.createReadStream(absolutePath).pipe(resp);
         }
 
     } catch (error) {
+        // 404
         const templateName = resolve(__dirname, '../template/404.ejs');
         const html = await renderFile(templateName,  {}, { cache: true, filename: templateName});
         return resp.end(html);
