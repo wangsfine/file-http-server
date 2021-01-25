@@ -1,5 +1,8 @@
+#!/usr/bin/env node
+
 const minimist = require('minimist');
 const path = require('path');
+const { getIpAddress } = require('./src/utils/index.js');
 const app = require('./src/core/app.js');
 const fileRouterMiddleware = require('./src/middlewares/fileRouterMiddleware.js');
 const staticMiddleware = require('./src/middlewares/staticMiddleware.js');
@@ -21,5 +24,6 @@ app
 .port(port)
 .middlewares(middlewares)
 .start(() => {
-    console.log(`server is started at port ${port}, http://localhost:${port}`)
+    const ip = getIpAddress();
+    console.log(`server is started at port ${port}, http://${ip}:${port}`)
 })
