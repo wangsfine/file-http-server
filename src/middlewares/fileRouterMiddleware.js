@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fsPromise = require('fs/promises');
+const fsPromise = require('fs').promises;
 const zlib = require('zlib');
 const ejs = require('ejs');
 const util = require('util');
