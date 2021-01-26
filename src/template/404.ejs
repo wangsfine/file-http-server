@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>simple http server</title>
+    <title>Simple Http Server</title>
     <link rel="icon" href="/simple-http-server/favicon.ico">
+    <script src="/simple-http-server/iconfont.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+        }
+        .container {
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btn-link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #1989FA;
+            border-radius: 2px;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+        }
+        .btn-link:hover {
+            border-color: #409EFF;
+        }
+    </style>
 </head>
 <body>
-    资源不存在
+    <div class="container">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#iconicon-test"></use>
+        </svg>
+        <br>
+        迷路了 <a class="btn-link" href="/">返回首页</a>
+    </div>
 </body>
 </html>

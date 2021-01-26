@@ -25,5 +25,10 @@ app
 .middlewares(middlewares)
 .start(() => {
     const ip = getIpAddress();
-    console.log(`server is started at port ${port}, http://${ip}:${port}`)
+    console.log(
+        `Server running at: 
+        - Local:   http://localhost:${port}/
+        - Network: http://${ip}:${port}/
+        `
+    )
 })

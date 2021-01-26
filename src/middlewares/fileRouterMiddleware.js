@@ -23,8 +23,9 @@ async function registRoutes(req, resp) {
                 dirent.path = join(path, dirent.name);
                 dirents.push(dirent);
             }
+            const preLink = join(path, '../');
             const templateName = resolve(__dirname, '../template/index.ejs');
-            const html = await renderFile(templateName, { dirents }, { cache: true, filename: templateName});
+            const html = await renderFile(templateName, { dirents, preLink }, { cache: true, filename: templateName});
             return resp.end(html);
         }
         // file
