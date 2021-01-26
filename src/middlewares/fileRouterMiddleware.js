@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fsPromise = require('fs/promises');
+const zlib = require('zlib');
 const ejs = require('ejs');
 const util = require('util');
 const utils = require('../utils/index.js');
@@ -30,7 +31,7 @@ async function registRoutes(req, resp) {
         }
         // file
         if (stat.isFile()){
-            fs.createReadStream(absolutePath).pipe(resp);
+            fs.createReadStream(absolutePath).pipe(zlib.createGzip()).pipe(resp);
         }
 
     } catch (error) {

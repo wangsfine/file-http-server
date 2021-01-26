@@ -13,7 +13,7 @@ const args = minimist(process.argv.slice(2));
 const { proxy, port = 8000 } = args;
 
 const middlewares = [
-    staticMiddleware.static(path.resolve(__dirname, './src/static'), '/simple-http-server'),
+    staticMiddleware.static(path.resolve(__dirname, './src/static'), '/file-http-server'),
     fileRouterMiddleware,
 ];
 if (proxy) {

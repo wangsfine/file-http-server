@@ -1,5 +1,5 @@
 {
-  "name": "simple-http-server",
+  "name": "file-http-server",
   "version": "1.0.0",
   "description": "a simple http server, created by your local dir",
   "main": "index.js",
@@ -24,6 +24,6 @@
     "request": "^2.88.2"
   },
   "bin": {
-    "simple-http-server": "./index.js"
+    "file-http-server": "./index.js"
   }
 }
