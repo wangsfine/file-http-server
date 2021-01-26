@@ -1,7 +1,7 @@
 const utils = require('../utils/index.js');
 const { join } = require('path');
 const fs = require('fs');
-const fsPromise = require('fs/promises');
+const fsPromise = require('fs').promises;
 
 /**
  * 静态资源中间件

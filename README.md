@@ -1,5 +1,5 @@
 # file-http-server
-a simple file http server, created by local file system, need to install nodejs version is more than v14.15.1
+a simple file http server, created by local file system, need to install nodejs version is more than v10
 # Usage
 1. npx
 ```
