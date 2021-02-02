@@ -1,6 +1,6 @@
 {
   "name": "file-http-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a simple http server, created by your local dir",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   "homepage": "https://github.com/wangsfine/simple-http-server#readme",
   "dependencies": {
     "ejs": "^3.1.5",
+    "http-proxy": "^1.18.1",
     "ip": "^1.1.5",
     "lodash": "^4.17.20",
-    "minimist": "^1.2.5",
-    "request": "^2.88.2"
+    "minimist": "^1.2.5"
   },
   "bin": {
     "file-http-server": "./index.js"

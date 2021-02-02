@@ -14,11 +14,8 @@ const { proxy, port = 8000 } = args;
 
 const middlewares = [
     staticMiddleware.static(path.resolve(__dirname, './src/static'), '/file-http-server'),
-    fileRouterMiddleware,
 ];
-if (proxy) {
-    middlewares.shift(proxyMiddleware.create(proxy));
-}
+middlewares.push(proxy ? proxyMiddleware.create(proxy) : fileRouterMiddleware)
 
 app
 .port(port)
